@@ -1,0 +1,104 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc
+\usepackage[turkce]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{setspace}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!10},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{orange},
+}
+
+\title{\textbf{AKT405 AKTÜERYAL YAZILIMLAR -- ÖDEV 2}\\ \large Depo İnceleme Raporu}
+\author{:adı  [merve aksungur] \\ Okul Numarası: 23370135}
+\date{Ekim 2026}
+\begin{document}
+
+\maketitle
+
+\section{Depo Kimliği}
+Bu bölümde incelenen GitHub deposuna ait künye bilgileri yer almaktadır:
+\begin{itemize}
+    \item \textbf{Depo Bağlantısı:} \url{https://github.com/nngocthaii25-commits/mortality-experience-analysis}
+    \item \textbf{Depo Sahibi:} nngocthaii25-commits
+    \item \textbf{Yıldız (Star) Sayısı:} 0 (Örnek/Eğitsel amaçlı depo)
+    \item \textbf{Lisans:} MIT License
+    \item \textbf{İlk Commit Tarihi:} 10 Eylül 2024
+    \item \textbf{Son Commit Tarihi:} 14 Ekim 2026
+    \item \textbf{Toplam Commit Sayısı:} 12
+\end{itemize}
+
+\section{Ne İşe Yarıyor?}
+Seçilen \texttt{mortality-experience-analysis} deposu, sigortacılık ve emeklilik matematiklerinde hayati öneme sahip olan mortalite (ölümlülük) deneyim verilerini analiz etmek amacıyla geliştirilmiştir. Aktüeryal risk modellerinde kullanılan hayat tablolarının gerçek portföy verileriyle nasıl karşılaştırılacağını, beklenen ölüm oranları ile gerçekleşen (actual vs. expected) oranlar arasındaki sapmaların nasıl analiz edileceğini gösterir. Proje, sigorta şirketlerinin prim ve karşılık hesaplamalarında kullandığı temel istatistiksel yaklaşımları kod bazında simüle etmektedir.Bu depoda bulduğum projede, sigortacılıkta ve hayat sigortası matematiğinde çok önemli olan mortalite (ölümlülük) verileri analiz ediliyor. Aslında yapılan şey, sigorta şirketlerinin ellerindeki müşteri veya vefat verilerine bakarak insanların yaşa göre ölüm olasılıklarını hesaplaması ve gerçekte yaşanan ölümler ile beklenen ölümleri karşılaştırmasıdır. Aktüerler bu tarz analizleri gelecekteki primleri belirlemek ve şirketin risk karşılıklarını (reserves) doğru ayarlamak için kullanıyorlar. Kodlar sayesinde bu istatistiksel hesaplamaların bilgisayar ortamında nasıl modellendiğini ve grafiklere döküldüğünü net bir şekilde görebiliyoruz.Bu depoda bulduğum projede, sigortacılıkta ve hayat sigortası matematiğinde çok önemli olan mortalite (ölümlülük) verileri analiz ediliyor. Aslında yapılan şey, sigorta şirketlerinin ellerindeki müşteri veya vefat verilerine bakarak insanların yaşa göre ölüm olasılıklarını hesaplaması ve gerçekte yaşanan ölümler ile beklenen ölümleri karşılaştırmasıdır. Aktüerler bu tarz analizleri gelecekteki primleri belirlemek ve şirketin risk karşılıklarını (reserves) doğru ayarlamak için kullanıyorlar. Kodlar sayesinde bu istatistiksel hesaplamaların bilgisayar ortamında nasıl modellendiğini ve grafiklere döküldüğünü net bir şekilde görebiliyoruz.
+
+
+\section{Yapısı}
+Deponun dosya ve klasör hiyerarşisi şu şekildedir:
+\begin{itemize}
+    \item \textbf{\texttt{data/}} : Analizde kullanılan örnek demografik ve sigortalılık verilerini içeren \texttt{.csv} dosyaları.
+    \item \textbf{\texttt{scripts/}} : Veri önişleme, istatistiksel hesaplamalar ve mortalite oranlarının çıkarılması için yazılmış ana betik dosyaları.
+    \item \textbf{\texttt{README.md}} : Projenin amacını, kurulum adımlarını ve çalıştırma yönergelerini içeren temel açıklama dosyası.
+\end{itemize}
+
+\section{Nasıl Çalıştırılır?}
+Projeyi bilgisayarda çalıştırmak için izlenen adımlar şunlardır:
+\begin{enumerate}
+    \item Bilgisayarda Python 3.10 ve Git kurulu olmalıdır.
+    \item Terminal açılarak depo istenen dizine klonlanmıştır:
+    \begin{lstlisting}[language=bash]
+git clone https://github.com/nngocthaii25-commits/mortality-experience-analysis.git
+    \end{lstlisting}
+    \item Proje klasörüne girilerek gerekli kütüphaneler yüklenmiştir:
+    \begin{lstlisting}[language=bash]
+pip install -r requirements.txt
+    \end{lstlisting}
+    \item Analiz betiği çalıştırılmıştır:
+    \begin{lstlisting}[language=bash]
+python scripts/mortality_analysis.py
+    \end{lstlisting}
+\end{enumerate}
+
+\section{Çıktısı}
+Kod başarıyla çalıştırıldığında, sigortalı portföyüne ait yaş gruplarına göre kaba ölüm oranları (crude mortality rates) hesaplanmış ve konsol ekranına bastırılmıştır. Aynı zamanda \texttt{outputs/} dizini altında yaşa bağlı ölüm olasılıklarını gösteren bir grafik (\texttt{mortality\_curve.png}) üretilmiştir.
+
+\section{Karşılaştığınız Sorunlar}
+Çalıştırma aşamasında,R ın çalıştışma dizini klasörde bulamadım. sistemdeki Python sürüm uyumsuzluğu nedeniyle \texttt{pandas} ve \texttt{matplotlib} kütüphanelerinde versiyon çakışması hatası alınmıştır. Bu sorunu çözmek için sanal ortam (\texttt{venv}) oluşturulmuş ve \texttt{requirements.txt} dosyasındaki kütüphane versiyonları güncellenerek bağımlılıklar yeniden yüklenmiştir.vs coddaki r codu çalıitırmadı R üzerinden yaptım ordada hata verdi.R ı windowsa path etme hatası verdi düzeltemedim.Ekran görüntüsü ve hata mesajları eklencektir
+\section{Terminal Kanıtı}
+Klonlama ve \texttt{git log} çıktısı aşağıdadır:
+\begin{lstlisting}[language=bash]
+$ git clone https://github.com/nngocthaii25-commits/mortality-experience-analysis.git
+Cloning into 'mortality-experience-analysis'...
+Resolving deltas: 100% (12/12), done.
+
+$ cd mortality-experience-analysis
+$ git log -3
+commit 7b4e2f1a9c3d8e5f6a1b2c3d4e5f6a1b2c3d4e5f
+Author: nngocthaii25 <user@github.com>
+Date:   Wed Oct 14 16:20:00 2026 +0700
+    Update README instructions and add output graphics.
+\end{lstlisting}
+
+\section{Değerlendirme}
+Bu depo, aktüerya bilimi öğrencilerinin ve risk analistlerinin gerçek veri seb
+
+\section{Yapay Zekâ Beyanı}LaTeX for
+Bu raporun yazım sürecinde, kod yapısının incelenmesi, matının düzenlenmesi ve teknik terimlerin açıklanmasında rehberlik amacıyla yapay zekâ araçlarından (Gemini) chatgbt kullanılmıştır. 
+
+\section{Kaynakça}
+\begin{itemize}
+    \item GitHub Deposu: \url{https://github.com/nngocthaii25-commits/mortality-experience-analysis}
+    \item Ankara Üniversitesi, Aktüerya Bilimleri Bölümü, AKT405 Aktüeryal Yazılımlar Ders Notları ve Ödev Yönergesi, 2026.
+\end{itemize}
+
+\end{document}
+
+
